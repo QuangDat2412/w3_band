@@ -44,7 +44,19 @@
         </div>
         <!-- End header -->
         <!-- Begin slider -->
-        <div id="slider">
+        <div id="slider" class="mySlides slider1">
+            <div class="text-content">
+                <h3 class="text-heading">New York</h3>
+                <p class="text-descripsion">The atmosphere in New York is lorem ipsum.</p>
+            </div>
+        </div>
+        <div id="slider" class="mySlides slider2">
+            <div class="text-content">
+                <h3 class="text-heading">New York</h3>
+                <p class="text-descripsion">The atmosphere in New York is lorem ipsum.</p>
+            </div>
+        </div>
+        <div id="slider" class="mySlides slider3">
             <div class="text-content">
                 <h3 class="text-heading">New York</h3>
                 <p class="text-descripsion">The atmosphere in New York is lorem ipsum.</p>
@@ -254,6 +266,21 @@
         modalContainer.addEventListener('click', function (event) {
             event.stopPropagation()
         })
+
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 4000);    
+            }
     </script>
 </body>
 
